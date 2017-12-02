@@ -1,6 +1,6 @@
 import React from 'react';
 import { say } from 'cowsay';
-
+import getFakerData from '../../logics/getFakerData';
 import CowSays from '../cowsay';
 
 class CowsayButton extends React.Component {
@@ -13,7 +13,8 @@ class CowsayButton extends React.Component {
   }
 
   onClick() {
-    const cowSay = say({ text: 'grazing in the browser', wrapLength: 40, wrap: true });
+    const cowSayText = `Hello ${getFakerData()}`;
+    const cowSay = say({ text: cowSayText });
     this.setState({ cowSay });
     console.log();
   }
